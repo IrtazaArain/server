@@ -3,6 +3,7 @@ node_modules/
 
 # Ignore .env file
 .env
+.gitignore
 
 # Ignore build directory
 build/

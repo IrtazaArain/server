@@ -16,6 +16,7 @@ const login = async (req, res) => {
     );
 
     if (userResult.rows.length === 0) {
+      console.log("User not found");
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
@@ -23,6 +24,7 @@ const login = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
+      console.log("Password does not match");
       return res.status(400).json({ message: "Invalid email or password" });
     }
 
